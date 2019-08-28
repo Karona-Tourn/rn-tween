@@ -1,6 +1,6 @@
 {
   "name": "rn-tween",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Help create animated react native tween component",
   "main": "./src/RNTween.js",
   "typings": "./src/RNTween.d.ts",
@@ -25,6 +25,9 @@
     "url": "https://github.com/Karona-Tourn/rn-tween/issues"
   },
   "homepage": "https://github.com/Karona-Tourn/rn-tween#readme",
+  "scripts": {
+    "test": "jest"
+  },
   "peerDependencies": {
     "react": ">=0.14.9",
     "react-native": ">=0.23.1"
