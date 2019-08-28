@@ -16,6 +16,13 @@ const transformProperties = [
 	'translateY'
 ];
 
+const defaultProps = {
+	autoStartName: null,
+	firstUsedConfigName: null,
+	initialConfig: null,
+	onComplete: null
+};
+
 export class RNTween extends React.Component {
 	constructor(props) {
 		super(props);
@@ -209,7 +216,7 @@ export class RNTween extends React.Component {
 }
 
 RNTween.defaultProps = {
-	AnimatedComponent: Animated.View
+	...defaultProps
 };
 
 export class RNTweenView extends React.Component {
@@ -241,6 +248,10 @@ export class RNTweenView extends React.Component {
 	}
 }
 
+RNTweenView.defaultProps = {
+	...defaultProps
+};
+
 export class RNTweenText extends React.Component {
 	render() {
 		const { AnimatedComponent, ...restProps } = this.props;
@@ -270,6 +281,10 @@ export class RNTweenText extends React.Component {
 	}
 }
 
+RNTweenText.defaultProps = {
+	...defaultProps
+};
+
 export class RNTweenImage extends React.Component {
 	render() {
 		const { AnimatedComponent, ...restProps } = this.props;
@@ -298,3 +313,7 @@ export class RNTweenImage extends React.Component {
 		this._tween && this._tween.stop();
 	}
 }
+
+RNTweenImage.defaultProps = {
+	...defaultProps
+};
