@@ -28,8 +28,12 @@ export class RNTween extends React.Component {
 
 		this.prepare(props.initialConfig);
 
-		if (props.firstUsedConfigName) {
-			const config = this.state.tweenConfig[props.firstUsedConfigName];
+		const configNames = Object.keys(this.state.tweenConfig);
+		if (configNames.length > 0) {
+			const config = this.state.tweenConfig[
+				props.firstUsedConfigName || configNames[0]
+			];
+
 			if (config) {
 				this.state.animatedStyles = this._getComputedAnimatedStyles(
 					config
@@ -164,21 +168,7 @@ export class RNTween extends React.Component {
 
 		this.stop();
 
-		if (this.state.playedTweenName == option.name) {
-			if (option.restart) {
-				config.configs.forEach(e => {
-					e.value.setValue(
-						option.reversed
-							? e.interpolated
-								? 1
-								: e.to
-							: e.interpolated
-							? 0
-							: e.from
-					);
-				});
-			}
-		} else {
+		if (this.state.playedTweenName != option.name) {
 			const animatedStyles = this._getComputedAnimatedStyles(config);
 
 			if (this.state.mounted) {

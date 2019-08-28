@@ -28,7 +28,6 @@ export class RNTween extends React.Component<RNTweenProps> {
 
     start(option: {
         name: string,
-        restart: boolean,
         reversed: boolean,
         onComplete: () => void
     }): void;
@@ -45,7 +44,6 @@ export class RNTweenView extends React.Component<RNTweenViewProps> {
 
     start(option: {
         name: string,
-        restart: boolean,
         reversed: boolean,
         onComplete: () => void
     }): void;
@@ -61,7 +59,6 @@ export class RNTweenText extends React.Component<RNTweenTextProps> {
 
     start(option: {
         name: string,
-        restart: boolean,
         reversed: boolean,
         onComplete: () => void
     }): void;
@@ -77,7 +74,6 @@ export class RNTweenImage extends React.Component<RNTweenImageProps> {
 
     start(option: {
         name: string,
-        restart: boolean,
         reversed: boolean,
         onComplete: () => void
     }): void;

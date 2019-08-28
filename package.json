@@ -23,10 +23,6 @@
     "url": "https://github.com/Karona-Tourn/rn-tween/issues"
   },
   "homepage": "https://github.com/Karona-Tourn/rn-tween#readme",
-  "scripts": {
-    "start": "react-native start",
-    "test": "jest"
-  },
   "peerDependencies": {
     "react": ">=0.14.9",
     "react-native": ">=0.23.1"
