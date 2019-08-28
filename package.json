@@ -15,7 +15,9 @@
     "react-native-motion",
     "rn-motion",
     "tween",
-    "motion"
+    "motion",
+    "rn-animation",
+    "animation"
   ],
   "author": "Karona Tourn",
   "license": "MIT",
