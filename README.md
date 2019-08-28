@@ -2,13 +2,6 @@
 
 It can help animating components by timing.
 
-## Features
-
--   Support both Android and iOS
--   Possible to wrap more than one child component
--   Easy to use
--   Some customizations
-
 ## Installation
 
 -   Using **Npm**
