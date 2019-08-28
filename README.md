@@ -123,6 +123,8 @@ _tween.stop();
 
 ## RNTweenView
 
+Also inherits [ViewProps](https://facebook.github.io/react-native/docs/view)
+
 | Name                | Type      | Default | Description                                                                  |
 |---------------------|-----------|---------|------------------------------------------------------------------------------|
 | autoStartName       | string    | null    | Tell which animation tween should automatically start at the first time      |
@@ -132,6 +134,8 @@ _tween.stop();
 
 ## RNTweenText
 
+Also inherits [TextProps](https://facebook.github.io/react-native/docs/text)
+
 | Name                | Type      | Default | Description                                                                  |
 |---------------------|-----------|---------|------------------------------------------------------------------------------|
 | autoStartName       | string    | null    | Tell which animation tween should automatically start at the first time      |
@@ -140,6 +144,8 @@ _tween.stop();
 | onComplete          | function  | null    | The callback invoked after the tween animation completed                     |
 
 ## RNTweenImage
+
+Also inherits [ImageProps](https://facebook.github.io/react-native/docs/image)
 
 | Name                | Type      | Default | Description                                                                  |
 |---------------------|-----------|---------|------------------------------------------------------------------------------|
