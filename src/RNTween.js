@@ -57,7 +57,7 @@ export class RNTween extends React.Component {
 	}
 
 	render() {
-		const { style, restProps, AnimatedComponent } = this.props;
+		const { style, AnimatedComponent, ...restProps } = this.props;
 		return (
 			<AnimatedComponent
 				{...restProps}
