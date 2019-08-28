@@ -147,3 +147,7 @@ _tween.stop();
 | firstUsedConfigName | string    | null    | Tell which animation tween configuration should be applied at the first time |
 | initialConfig       | object    | null    | The initial tween configurations to be used                                  |
 | onComplete          | function  | null    | The callback invoked after the tween animation completed                     |
+
+## License
+
+- [MIT](LICENSE)
