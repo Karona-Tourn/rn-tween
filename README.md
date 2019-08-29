@@ -97,9 +97,32 @@ import {RNTweenView} from 'rn-tween';
 
 // Stop animating the tweeen with a specific configuration name
 _tween.start({name: 'transit'});
+_tween.start({name: 'transit', reversed: true});
+_tween.start({name: 'transit', reversed: true, onComplete: () => alert('Finished')});
 
 // Stop animating the tween
 _tween.stop();
+
+// Reprepare tween animation configurations
+_tween.prepare({
+  transit: {
+    mode: 'sequence',
+    configs: [
+      {
+        from: 0,
+        to: 1,
+        duration: 500,
+        styleProperty: 'opacity',
+      },
+      {
+        from: 0.2,
+        to: 1,
+        duration: 500,
+        styleProperty: 'scale',
+      },
+    ],
+  },
+});
 ```
 
 ## Available component props
@@ -149,21 +172,42 @@ Also inherits [ImageProps](https://facebook.github.io/react-native/docs/image)
 
 ## initialConfig
 
-| Name    | Type   | Default | Description                                                    |
-|---------|--------|---------|----------------------------------------------------------------|
-| mode    | string | null    | Specify tween animation mode like **parallel** or **sequence** |
-| configs | array  | null    | Array of tween animation configuration                         |
+| Name    | Type   | Description                                                    |
+| ------- | ------ | -------------------------------------------------------------- |
+| mode    | string | Specify tween animation mode like **parallel** or **sequence** |
+| configs | array  | Array of tween animation configuration                         |
 
 ### initialConfig.configs
 
 | Name          | Type   | Description                                                                |
-|---------------|--------|----------------------------------------------------------------------------|
+| ------------- | ------ | -------------------------------------------------------------------------- |
 | styleProperty | string | Specify any style property to be animated like **opacity**, **scale**, etc |
 | from          | number | Value from where the animation starts                                      |
 | to            | number | Value to where the animation must reach                                    |
 | duration      | number | Duration of animation                                                      |
 | delay         | number | Delay before the animation starts                                          |
 | loop          | bool   | Tell if the animation should play as loop                                  |
+
+## Available instance functions
+
+### start({ name, reversed, onComplete })
+
+| Name       | Type     | Description                                   |
+| ---------- | -------- | --------------------------------------------- |
+| name       | string   | Name of tween animation configuration         |
+| reversed   | bool     | Tell if the animation should play in reverse  |
+| onComplete | function | Callback invoked after the animation complete |
+
+### stop()
+
+Stop a running animation
+
+### prepare({ mode, configs })
+
+| Name    | Type   | Description                                                    |
+| ------- | ------ | -------------------------------------------------------------- |
+| mode    | string | Specify tween animation mode like **parallel** or **sequence** |
+| configs | array  | Array of tween animation configuration                         |
 
 ## License
 

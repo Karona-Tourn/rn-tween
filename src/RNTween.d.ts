@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component, ComponentType } from 'react';
 import { ViewProps, TextProps, ImageProps } from 'react-native'
 
 interface RNTweenConfig {
@@ -19,11 +19,11 @@ interface RNTweenProps {
     autoStartName?: string | null;
     firstUsedConfigName?: string | null;
     initialConfig?: RNTweenConfig | null;
-    AnimatedComponent?: React.ComponentType<any> | null;
+    AnimatedComponent?: ComponentType<any> | null;
     onComplete?: () => void | null;
 }
 
-export class RNTween extends React.Component<RNTweenProps> {
+export class RNTween extends Component<RNTweenProps> {
     prepare(config: RNTweenConfig | null): void;
 
     start(option: {
@@ -39,7 +39,7 @@ export class RNTween extends React.Component<RNTweenProps> {
 interface RNTweenViewProps extends ViewProps, RNTweenProps {
 }
 
-export class RNTweenView extends React.Component<RNTweenViewProps> {
+export class RNTweenView extends Component<RNTweenViewProps> {
     prepare(config: RNTweenConfig | null): void;
 
     start(option: {
@@ -54,7 +54,7 @@ export class RNTweenView extends React.Component<RNTweenViewProps> {
 interface RNTweenTextProps extends TextProps, RNTweenProps {
 }
 
-export class RNTweenText extends React.Component<RNTweenTextProps> {
+export class RNTweenText extends Component<RNTweenTextProps> {
     prepare(config: RNTweenConfig | null): void;
 
     start(option: {
@@ -69,7 +69,7 @@ export class RNTweenText extends React.Component<RNTweenTextProps> {
 interface RNTweenImageProps extends ImageProps, RNTweenProps {
 }
 
-export class RNTweenImage extends React.Component<RNTweenImageProps> {
+export class RNTweenImage extends Component<RNTweenImageProps> {
     prepare(config: RNTweenConfig | null): void;
 
     start(option: {
