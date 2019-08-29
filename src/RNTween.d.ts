@@ -1,5 +1,5 @@
 import { Component, ComponentType } from 'react';
-import { ViewProps, TextProps, ImageProps } from 'react-native'
+import { ViewProps, TextProps, ImageProps, EasingFunction, Easing } from 'react-native';
 
 interface RNTweenConfig {
     [index: string]: {
@@ -10,7 +10,9 @@ interface RNTweenConfig {
             to: number | string,
             duration?: number,
             delay?: number,
-            loop?: boolean | null
+            loop?: boolean | null,
+            easing?: EasingFunction | null,
+            useNative?: boolean | null
         }[]
     };
 }
@@ -22,6 +24,10 @@ interface RNTweenProps {
     AnimatedComponent?: ComponentType<any> | null;
     onComplete?: () => void | null;
 }
+
+export {
+    Easing as TweenEasing
+};
 
 export class RNTween extends Component<RNTweenProps> {
     prepare(config: RNTweenConfig | null): void;

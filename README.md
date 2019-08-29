@@ -172,12 +172,21 @@ Also inherits [ImageProps](https://facebook.github.io/react-native/docs/image)
 
 ## initialConfig
 
+```jsx
+initialConfig: {
+  [name: string]: {
+    mode,
+    configs
+  }
+}
+```
+
 | Name    | Type   | Description                                                    |
 | ------- | ------ | -------------------------------------------------------------- |
 | mode    | string | Specify tween animation mode like **parallel** or **sequence** |
 | configs | array  | Array of tween animation configuration                         |
 
-### initialConfig.configs
+### initialConfig[name].configs[index]
 
 | Name          | Type   | Description                                                                |
 | ------------- | ------ | -------------------------------------------------------------------------- |
@@ -187,6 +196,8 @@ Also inherits [ImageProps](https://facebook.github.io/react-native/docs/image)
 | duration      | number | Duration of animation                                                      |
 | delay         | number | Delay before the animation starts                                          |
 | loop          | bool   | Tell if the animation should play as loop                                  |
+| easing        | function | Easing function to define curve. Default is TweenEasing.linear           |
+| useNative     | bool   | Uses the native driver when true. Default is true                          |
 
 ## Available instance functions
 

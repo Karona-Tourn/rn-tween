@@ -2,8 +2,8 @@
   "name": "rn-tween",
   "version": "1.0.4",
   "description": "Help create animated react native tween component",
-  "main": "./src/RNTween.js",
-  "typings": "./src/RNTween.d.ts",
+  "main": "src/RNTween.js",
+  "typings": "src/RNTween.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Karona-Tourn/rn-tween.git"
