@@ -28,10 +28,10 @@ yarn add rn-tween --dev
 ### Auto start
 
 ```jsx
-import {RNTweenView} from 'rn-tween';
+import { RNTweenView } from 'rn-tween';
 
 <RNTweenView
-  autoStartName="transit"
+  autoStartName='transit'
   initialConfig={{
     transit: {
       mode: 'parallel',
@@ -41,34 +41,41 @@ import {RNTweenView} from 'rn-tween';
           to: 1,
           duration: 1000,
           styleProperty: 'opacity',
-          loop: true,
+          loop: true
         },
         {
           from: 0.2,
           to: 1,
           duration: 1000,
           styleProperty: 'scale',
-          loop: true,
+          loop: true
         },
-      ],
-    },
+        {
+          from: '0deg',
+          to: '360deg',
+          duration: 1000,
+          styleProperty: 'rotate',
+          loop: true
+        }
+      ]
+    }
   }}
   style={{
     width: 100,
     height: 100,
-    backgroundColor: 'red',
+    backgroundColor: 'red'
   }}
-/>;
+/>
 ```
 
 ### Call functions
 
 ```jsx
-import {RNTweenView} from 'rn-tween';
+import { RNTweenView } from 'rn-tween';
 
 <RNTweenView
   ref={ref => (_tween = ref)}
-  firstUsedConfigName="transit"
+  firstUsedConfigName='transit'
   initialConfig={{
     transit: {
       mode: 'parallel',
@@ -77,28 +84,32 @@ import {RNTweenView} from 'rn-tween';
           from: 0,
           to: 1,
           duration: 500,
-          styleProperty: 'opacity',
+          styleProperty: 'opacity'
         },
         {
           from: 0.2,
           to: 1,
           duration: 500,
-          styleProperty: 'scale',
-        },
-      ],
-    },
+          styleProperty: 'scale'
+        }
+      ]
+    }
   }}
   style={{
     width: 100,
     height: 100,
-    backgroundColor: 'orange',
+    backgroundColor: 'orange'
   }}
-/>;
+/>
 
 // Stop animating the tweeen with a specific configuration name
-_tween.start({name: 'transit'});
-_tween.start({name: 'transit', reversed: true});
-_tween.start({name: 'transit', reversed: true, onComplete: () => alert('Finished')});
+_tween.start({ name: 'transit' });
+_tween.start({ name: 'transit', reversed: true });
+_tween.start({
+  name: 'transit',
+  reversed: true,
+  onComplete: () => alert('Finished')
+});
 
 // Stop animating the tween
 _tween.stop();
@@ -112,16 +123,16 @@ _tween.prepare({
         from: 0,
         to: 1,
         duration: 500,
-        styleProperty: 'opacity',
+        styleProperty: 'opacity'
       },
       {
         from: 0.2,
         to: 1,
         duration: 500,
-        styleProperty: 'scale',
-      },
-    ],
-  },
+        styleProperty: 'scale'
+      }
+    ]
+  }
 });
 ```
 
@@ -173,12 +184,12 @@ Also inherits [ImageProps](https://facebook.github.io/react-native/docs/image)
 ## initialConfig
 
 ```jsx
-initialConfig: {
+initialConfig={{
   [name: string]: {
     mode,
     configs
   }
-}
+}}
 ```
 
 | Name    | Type   | Description                                                    |
@@ -186,18 +197,33 @@ initialConfig: {
 | mode    | string | Specify tween animation mode like **parallel** or **sequence** |
 | configs | array  | Array of tween animation configuration                         |
 
+**Note:**
+**name** is important and must be unique because it will be used to represent a group of
+animation tween configurations that will be applied to a animated component to animate. A animated tween component
+can have more than one named group of animation tween configurations.
+
+Ex:
+
+```javascript
+initialConfig={{
+  transit: { ... },
+  dismiss: { ... },
+  ...
+}}
+```
+
 ### initialConfig[name].configs[index]
 
-| Name          | Type   | Description                                                                |
-| ------------- | ------ | -------------------------------------------------------------------------- |
-| styleProperty | string | Specify any style property to be animated like **opacity**, **scale**, etc |
-| from          | number | Value from where the animation starts                                      |
-| to            | number | Value to where the animation must reach                                    |
-| duration      | number | Duration of animation                                                      |
-| delay         | number | Delay before the animation starts                                          |
-| loop          | bool   | Tell if the animation should play as loop                                  |
-| easing        | function | Easing function to define curve. Default is TweenEasing.linear           |
-| useNative     | bool   | Uses the native driver when true. Default is true                          |
+| Name          | Type             | Description                                                                |
+| ------------- | ---------------- | -------------------------------------------------------------------------- |
+| styleProperty | string           | Specify any style property to be animated like **opacity**, **scale**, etc |
+| from          | number           | Value from where the animation starts                                      |
+| to            | number or string | Value to where the animation must reach                                    |
+| duration      | number or string | Duration of animation                                                      |
+| delay         | number           | Delay before the animation starts                                          |
+| loop          | bool             | Tell if the animation should play as loop                                  |
+| easing        | function         | Easing function to define curve. Default is TweenEasing.linear             |
+| useNative     | bool             | Uses the native driver when true. Default is true                          |
 
 ## Available instance functions
 
