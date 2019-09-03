@@ -13,7 +13,7 @@ npm install rn-tween --save
 - Using **Yarn**
 
 ```bash
-yarn add rn-tween --dev
+yarn add rn-tween
 ```
 
 ## Tween components
